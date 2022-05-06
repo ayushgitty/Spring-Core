@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/util
+        http://www.springframework.org/schema/util/spring-util.xsd">
+	<!-- standalone collections -->
+	<util:list list-class="java.util.LinkedList" id="1234">
+		<value>Khachru</value>
+		<value>Kachra</value>
+		<value>Hatila</value>
+		<value>Dheela</value>
+	</util:list>
+
+	<!-- standalone map -->
+	<util:map map-class="java.util.HashMap" id="5566">
+		<entry key="Tuition-fee" value="50000" />
+		<entry key="Development-fee" value="20000" />
+		<entry key="Campus-fee" value="6500" />
+		<entry key="Others" value="2500" />
+	</util:map>
+
+	<!-- standalone properties -->
+	<util:properties id="1425">
+	<prop key="username">lallu@4567</prop>
+	<prop key="password">yyuubbvv55667788</prop>
+	</util:properties>
+
+	<bean class="com.springcore.standalonecollections.Person"
+		name="person1">
+		<!-- <property name="friends"> -->
+		<!-- <ref bean="1234"/> -->
+		<!-- </property> -->
+		<property name="friends" ref="1234" />
+		<property name="feestruct" ref="5566" />
+		<property name="pro" ref="1425"/>
+	</bean>
+
+</beans>
